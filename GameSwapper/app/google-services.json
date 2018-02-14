@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "854377775991",
+    "firebase_url": "https://gameswapper-6f976.firebaseio.com",
+    "project_id": "gameswapper-6f976",
+    "storage_bucket": "gameswapper-6f976.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854377775991:android:f12849ed35de330f",
+        "android_client_info": {
+          "package_name": "com.gameswapper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854377775991-0eofff5qod4r5bfu37ft06rgn41occ3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4-NfgUTOaNM6NuhaY6SJdFZs8PMzpMYM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
