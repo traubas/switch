@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GameSwapper</string>
+    <string name="game_search">Search by game name</string>
 </resources>

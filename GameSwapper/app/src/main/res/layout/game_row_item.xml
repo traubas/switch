@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="15sp">
-    <TextView
-        android:id="@+id/gameName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:textColor="@color/colorAccent"
-        android:textSize="16dp"
-        android:textStyle="bold" />
-    <ImageView
-        android:id="@+id/gameImage"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_alignParentRight="true"
-        />
-    <TextView
-        android:id="@+id/gameDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/gameName"
-        android:layout_toLeftOf="@id/gameImage"
-        android:textSize="12dp"/>
+    android:layout_width="match_parent">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/list_item_selector"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.2">
+
+
+            <TextView
+                android:id="@+id/gameName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            />
+
+            <TextView
+                android:id="@+id/gameDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/gameImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/consoleColor"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>
+

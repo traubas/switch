@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "854377775991-lhlhqvkpdku1alpmcaiouaqtdb7c7b59.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gameswapper",
+            "certificate_hash": "14c9addecec3ac087947fd7b1afad0686e2ff569"
+          }
+        },
+        {
           "client_id": "854377775991-0eofff5qod4r5bfu37ft06rgn41occ3v.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854377775991-0eofff5qod4r5bfu37ft06rgn41occ3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

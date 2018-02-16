@@ -16,4 +16,7 @@
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
+    <color name="ps4blue">#003791</color>
+    <color name="xboxonegreen">#5dc21e</color>
+    <color name="pcgray">#c2c2c2</color>
 </resources>
