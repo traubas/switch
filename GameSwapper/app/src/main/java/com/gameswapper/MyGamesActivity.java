@@ -5,9 +5,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -35,12 +35,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements GameAdapter.ListItemClickListener {
+public class MyGamesActivity extends AppCompatActivity implements GameAdapter.ListItemClickListener {
     RecyclerView recyclerView;
     TextView userNameTitle;
     TextView listOfGames;
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.ListI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        progressDialog = new ProgressDialog(MainActivity.this,
+        progressDialog = new ProgressDialog(MyGamesActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.ListI
             addGamesImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this, AddGamesToProfileActivity.class);
+                    Intent intent = new Intent(MyGamesActivity.this, AddGamesToProfileActivity.class);
                     startActivity(intent);
                 }
             });
@@ -117,11 +115,12 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.ListI
                     userNameTitle.setText(name);
                     listOfGames.setText("List Of Games");
                     recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-                    gameAdapter = new GameAdapter(gameList, MainActivity.this);
+                    gameAdapter = new GameAdapter(gameList, MyGamesActivity.this);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setAdapter(gameAdapter);
+
 
                     progressDialog.dismiss();
                     // ...
@@ -161,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.ListI
         final String game_name = ((TextView) view.findViewById(R.id.gameName)).getText().toString();
         final String game_desc = ((TextView) view.findViewById(R.id.gameDescription)).getText().toString();
         LinearLayout LL = (LinearLayout) view.findViewById(R.id.consoleColor);
+        ImageView logoImage = (ImageView) view.findViewById(R.id.platformLogo);
         Game chosenGame = new Game(game_name);
         chosenGame.addImage();
         String platform;
@@ -170,13 +170,16 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.ListI
         int xboxone = ((ColorDrawable)(getDrawable(R.color.xboxonegreen))).getColor();
 
         int pc = ((ColorDrawable)(getDrawable(R.color.pcgray))).getColor();
-        System.out.println(color+" "+ps4);
-        if (color == ps4)
+        System.out.println("color is: "+color+" compare with "+ps4+" "+xboxone+" "+pc);
+        if (color == ps4) {
             platform = "PS4";
-        else if (color == xboxone)
+        }
+        else if (color == xboxone) {
             platform = "XBOX ONE";
-        else
+        }
+        else {
             platform = "PC";
+        }
         final String platformName = platform;
         image.setImageResource(chosenGame.getImage());
         text.setText(game_name);
@@ -231,6 +234,10 @@ public class MainActivity extends AppCompatActivity implements GameAdapter.ListI
             case R.id.logout:
                 mAuth.signOut();
                 Intent intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.searchTheMarketBtn:
+                intent = new Intent(this,GamesOnMarketActivity.class);
                 startActivity(intent);
                 return true;
             default:

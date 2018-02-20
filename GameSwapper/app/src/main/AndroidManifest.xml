@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.Dark">
+        <activity android:name=".MyGamesActivity" android:theme="@style/AppTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddGamesToProfileActivity" />
+        <activity android:name=".AddGamesToProfileActivity" android:theme="@style/AppTheme.Dark"/>
         <activity android:name=".SignupActivity" android:theme="@style/AppTheme.Dark" />
         <activity android:name=".LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name=".GamesOnMarketActivity" android:theme="@style/AppThemeDark" />
     </application>
 
 </manifest>

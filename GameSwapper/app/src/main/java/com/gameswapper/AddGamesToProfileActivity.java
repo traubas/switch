@@ -3,18 +3,14 @@ package com.gameswapper;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -100,7 +96,7 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
                 @Override
                 public void onClick(View view) {
                     mDatabase.removeEventListener(VEL);
-                    Intent intent = new Intent(AddGamesToProfileActivity.this, MainActivity.class);
+                    Intent intent = new Intent(AddGamesToProfileActivity.this, MyGamesActivity.class);
                     startActivity(intent);
                 }
             });
@@ -285,10 +281,15 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.logout:
                 mAuth.signOut();
-                Intent intent = new Intent(this,LoginActivity.class);
+                intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.searchTheMarketBtn:
+                intent = new Intent(this,GamesOnMarketActivity.class);
                 startActivity(intent);
                 return true;
             default:

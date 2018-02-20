@@ -53,14 +53,16 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:background="@color/white"
-        android:gravity="center">
+        android:gravity="center"
+        android:weightSum="1">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:id="@+id/platformLogo"
+            android:src="@drawable/xboxlogo"
+            android:layout_height="70dp"
 
-            />
+            android:layout_weight="0.19"
+            android:layout_width="40dp" />
     </LinearLayout>
 
 </LinearLayout>

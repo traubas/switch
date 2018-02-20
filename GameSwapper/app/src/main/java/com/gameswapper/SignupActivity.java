@@ -162,7 +162,7 @@ public class SignupActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         mAuth.signOut();
         /*if (currentUser != null) {
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(this,MyGamesActivity.class);
             startActivity(intent);
         }*/
        // updateUI(currentUser);

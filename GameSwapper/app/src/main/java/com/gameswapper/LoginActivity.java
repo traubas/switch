@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
                             onLoginSuccess();
-                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this,MyGamesActivity.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         // onLoginFailed();
                         progressDialog.dismiss();
-                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this,MyGamesActivity.class);
                         startActivity(intent);
                     }
                 }, 3000);
@@ -133,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
+        // disable going back to the MyGamesActivity
         moveTaskToBack(true);
     }
 
@@ -178,7 +178,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         mAuth.signOut();
         /*if (currentUser != null) {
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(this,MyGamesActivity.class);
             startActivity(intent);
         }*/
         // updateUI(currentUser);

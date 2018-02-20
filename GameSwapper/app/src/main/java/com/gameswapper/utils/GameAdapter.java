@@ -1,6 +1,7 @@
 package com.gameswapper.utils;
 
 import android.content.Context;
+import android.media.Image;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.gameswapper.MainActivity;
 import com.gameswapper.R;
 import com.gameswapper.models.Game;
 
@@ -36,6 +36,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
         public TextView gameName, gameDescription;
         public ImageView gameImage;
         public LinearLayout LL;
+        public ImageView imageView;
 
         public MyViewHolder(View view) {
             super(view);
@@ -43,6 +44,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
             gameDescription = (TextView) view.findViewById(R.id.gameDescription);
             gameImage = (ImageView) view.findViewById(R.id.gameImage);
             LL = (LinearLayout) view.findViewById(R.id.consoleColor);
+            imageView = (ImageView) view.findViewById(R.id.platformLogo);
             view.setOnClickListener(this);
         }
         @Override
@@ -77,12 +79,15 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
             switch (game.getPlatform()) {
                 case "PS4":
                     holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.ps4blue));
+                    holder.imageView.setImageResource(R.drawable.ps4logo);
                     break;
                 case "XBOX ONE":
                     holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.xboxonegreen));
+                    holder.imageView.setImageResource(R.drawable.xboxlogo);
                     break;
                 case "PC":
                     holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.pcgray));
+                    holder.imageView.setImageResource(R.drawable.pclogo);
                     break;
 
             }
