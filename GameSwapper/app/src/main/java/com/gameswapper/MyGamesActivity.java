@@ -115,7 +115,7 @@ public class MyGamesActivity extends AppCompatActivity implements GameAdapter.Li
                     userNameTitle.setText(name);
                     listOfGames.setText("List Of Games");
                     recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-                    gameAdapter = new GameAdapter(gameList, MyGamesActivity.this);
+                    gameAdapter = new GameAdapter(gameList, MyGamesActivity.this,2);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());

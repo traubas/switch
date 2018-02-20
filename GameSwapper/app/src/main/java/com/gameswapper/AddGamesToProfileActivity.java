@@ -116,7 +116,7 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
                         game.addImage();
                         gameList.add(game);
                     }
-                    gameAdapter = new GameAdapter(gameList, AddGamesToProfileActivity.this);
+                    gameAdapter = new GameAdapter(gameList, AddGamesToProfileActivity.this,1);
                     recyclerView.setAdapter(gameAdapter);
                     progressDialog.dismiss();
                     // ...
@@ -157,7 +157,7 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
 
             }
         }
-        gameAdapter = new GameAdapter(adapterList,this);
+        gameAdapter = new GameAdapter(adapterList,this,1);
         recyclerView.setAdapter(gameAdapter);
         return true;
     }

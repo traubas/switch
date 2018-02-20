@@ -27,9 +27,13 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
     final int ps4color = R.color.ps4blue;
     final int xboxonecolor = R.color.xboxonegreen;
     final int pccolor = R.color.pcgray;
+    MyViewHolder mvh;
+    int ActivityNumber; //1 = AddGamesToProfileActivity, 2 = MyGamesActivity
 
-    public GameAdapter(ListItemClickListener listener) {
+    public GameAdapter(ListItemClickListener listener,int number) {
         mOnClickListener = listener;
+        ActivityNumber = number;
+
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -54,9 +58,11 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
         }
     }
 
-    public GameAdapter(List<Game> gameList, ListItemClickListener licl) {
+    public GameAdapter(List<Game> gameList, ListItemClickListener licl, int number) {
         this.gameList = gameList;
         mOnClickListener = licl;
+
+        ActivityNumber = number;
     }
 
     @Override
@@ -75,21 +81,24 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
         holder.gameImage.setBackgroundResource(game.getImage());
         Context context = holder.LL.getContext();
         System.out.println("game is "+game.getPlatform());
-        if (game.getPlatform()!= null) {
-            switch (game.getPlatform()) {
-                case "PS4":
-                    holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.ps4blue));
-                    holder.imageView.setImageResource(R.drawable.ps4logo);
-                    break;
-                case "XBOX ONE":
-                    holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.xboxonegreen));
-                    holder.imageView.setImageResource(R.drawable.xboxlogo);
-                    break;
-                case "PC":
-                    holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.pcgray));
-                    holder.imageView.setImageResource(R.drawable.pclogo);
-                    break;
+        if (ActivityNumber == 2) {
+            if (game.getPlatform() != null) {
+                switch (game.getPlatform()) {
+                    case "PS4":
+                        holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.ps4blue));
+                        holder.imageView.setImageResource(R.drawable.ps4logo);
+                        break;
+                    case "XBOX ONE":
+                        holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.xboxonegreen));
+                        holder.imageView.setImageResource(R.drawable.xboxlogo);
+                        break;
+                    case "PC":
+                        holder.LL.setBackgroundColor(ContextCompat.getColor(context, R.color.pcgray));
+                        holder.imageView.setImageResource(R.drawable.pclogo);
+                        break;
+                    default:
 
+                }
             }
         }
 
@@ -102,5 +111,6 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.MyViewHolder> 
     public interface ListItemClickListener {
         void onListItemClick(int clickedItemIndex);
     }
+
 
 }
