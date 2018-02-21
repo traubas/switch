@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GameSwapper</string>
+    <string name="app_name">GameChanger</string>
     <string name="game_search">Search by game name</string>
     <string name="offered_games">See What Games Are Being Offered</string>
 </resources>

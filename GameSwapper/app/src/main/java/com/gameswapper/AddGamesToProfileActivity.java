@@ -148,7 +148,6 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        System.out.println(newText);
         adapterList.clear();
         for (Game game : gameList) {
             if (game.getName().toLowerCase().contains(newText.toLowerCase())) {

@@ -16,7 +16,12 @@
             android:textColor="@color/xboxonegreen"
             android:gravity="center"/>
 
+
     </com.facebook.shimmer.ShimmerFrameLayout>
+    <SearchView
+        android:id="@+id/searchView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/offeredGamesRecyclerView"
         android:layout_width="match_parent"

@@ -12,5 +12,10 @@
             android:title="Logout"
             android:orderInCategory="101"
             app:showAsAction="ifRoom" />
+        <item android:id="@+id/profileImage"
+            android:title="Profile"
+            android:icon="@drawable/user"
+            android:orderInCategory="102"
+            app:showAsAction="ifRoom"/>
 
 </menu>

@@ -1,35 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+<LinearLayout android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:weightSum="1">
-
-    <LinearLayout
+    android:orientation="vertical" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:layout_weight="0.2">
+        android:layout_height="wrap_content"
+        android:weightSum="1">
 
-        <TextView
-            android:id="@+id/userOfferingName"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="user_123" />
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:layout_weight="0.2">
 
-        <TextView
-            android:id="@+id/gameNameBeingOffered"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layoutDirection="ltr">
+
+                <TextView
+                    android:id="@+id/userTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="username: "
+                    android:textColor="@color/primary_darker"/>
+
+                <TextView
+                    android:id="@+id/userOfferingName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="user_123" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/gameNameBeingOffered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="24sp"
+                tools:text="fifa 18" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/offeredGameImage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="24sp"
-            tools:text="fifa 18" />
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"/>
     </LinearLayout>
-    <ImageView
-        android:id="@+id/offeredGameImage"
+    <LinearLayout
+        android:id="@+id/offeredGameConsole"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.8"/>
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/offeredGameConsoleLogo"
+            android:layout_height="70dp"
+
+            android:layout_weight="0.19"
+            android:layout_width="40dp" />
+    </LinearLayout>
+
 </LinearLayout>

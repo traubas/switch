@@ -12,8 +12,13 @@ public class Offer {
     public Offer() {
 
     }
+    public Offer(String name, String game, String plat) {
+        user_name = name;
+        game_name = game;
+        platform = plat;
+    }
     public Offer(String name, String game, String plat, String loc) {
-        game_name = name;
+        user_name = name;
         game_name = game;
         platform = plat;
         location = loc;
