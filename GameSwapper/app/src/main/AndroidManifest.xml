@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data android:name="com.samsung.android.icon_container.has_icon_container" android:value="true"/>
-        <activity android:name=".MyGamesActivity" android:theme="@style/AppThemeDark">
+        <activity android:name=".UserProfileActivity" android:theme="@style/AppThemeDark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +22,7 @@
         <activity android:name=".SignupActivity" android:theme="@style/AppThemeDark" />
         <activity android:name=".LoginActivity" android:theme="@style/AppThemeDark" />
         <activity android:name=".GamesOnMarketActivity" android:theme="@style/AppThemeDark" />
+        <activity android:name=".MyGamesActivity" android:theme="@style/AppThemeDark" />
     </application>
 
 </manifest>

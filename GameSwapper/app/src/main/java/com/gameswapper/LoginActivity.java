@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
                             onLoginSuccess();
-                            Intent intent = new Intent(LoginActivity.this,MyGamesActivity.class);
+                            Intent intent = new Intent(LoginActivity.this,UserProfileActivity.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
+
+    <TextView
+        android:id="@+id/userProfileTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/userProfileTitle"
+        android:gravity="center"
+        android:textSize="26dp"
+        android:textColor="@color/primary_darker"/>
+    <TextView
+        android:id="@+id/userProfileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        tools:text="ofir traubas"/>
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/pcgray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp">
+
+        <TextView
+            android:id="@+id/userProfileNickTitle"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:text="User Nick: "
+            android:textColor="@color/primary_darker"
+            android:layout_marginLeft="10sp"/>
+        <TextView
+            android:id="@+id/userProfileNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp">
+
+        <TextView
+            android:id="@+id/userRatingTitle"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:text="User Rating: "
+            android:textColor="@color/primary_darker"
+            android:layout_marginLeft="10sp"/>
+        <RatingBar
+            android:id="@+id/userRatingStars"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:numStars="5"
+            android:progressTint="@color/staryellow"
+            android:isIndicator="true"
+            />
+        <TextView
+            android:id="@+id/userRatingNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.6"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/listOfGamesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+        <LinearLayout
+            android:id="@+id/ratingLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView android:id="@+id/rateTheUser"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Rate Me"
+                android:gravity="center"/>
+            <RatingBar
+                android:layout_gravity="center"
+                android:id="@+id/rateTheUserBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:isIndicator="false"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

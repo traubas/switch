@@ -96,7 +96,7 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
                 @Override
                 public void onClick(View view) {
                     mDatabase.removeEventListener(VEL);
-                    Intent intent = new Intent(AddGamesToProfileActivity.this, MyGamesActivity.class);
+                    Intent intent = new Intent(AddGamesToProfileActivity.this, UserProfileActivity.class);
                     startActivity(intent);
                 }
             });
@@ -288,8 +288,12 @@ public class AddGamesToProfileActivity extends AppCompatActivity implements Sear
                 startActivity(intent);
                 return true;
             case R.id.searchTheMarketBtn:
-                intent = new Intent(this,GamesOnMarketActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(this,GamesOnMarketActivity.class);
+                startActivity(intent2);
+                return true;
+            case R.id.profileImage:
+                Intent intent3 = new Intent(this,UserProfileActivity.class);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -108,7 +108,7 @@ public class GamesOnMarketActivity extends AppCompatActivity implements SearchVi
                 startActivity(intent);
                 return true;
             case R.id.profileImage:
-                Intent intent1 = new Intent(this, MyGamesActivity.class);
+                Intent intent1 = new Intent(this, UserProfileActivity.class);
                 startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);
@@ -193,4 +193,18 @@ public class GamesOnMarketActivity extends AppCompatActivity implements SearchVi
     public void onListItemClick(int clickedItemIndex) {
 
     }
+
+    RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
+            Log.e("ListView", "onScrollStateChanged");
+        }
+
+        @Override
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+            // Could hide open views here if you wanted. //
+        }
+    };
 }

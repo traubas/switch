@@ -17,5 +17,10 @@
             android:icon="@drawable/user"
             android:orderInCategory="102"
             app:showAsAction="ifRoom"/>
+        <item android:id="@+id/addGames"
+            android:icon="@drawable/plus"
+            android:title="addGames"
+            android:orderInCategory="99"
+            app:showAsAction="ifRoom" />
 
 </menu>
