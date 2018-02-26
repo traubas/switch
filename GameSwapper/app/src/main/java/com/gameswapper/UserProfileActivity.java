@@ -34,8 +34,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,14 +81,6 @@ public class UserProfileActivity extends AppCompatActivity implements GameAdapte
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Fetching Your Games :)...");
         progressDialog.show();
-//        addGamesImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MyGamesActivity.this, AddGamesToProfileActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-        //mDatabase = FirebaseDatabase.getInstance().getReference("users").child(id).child("user_name");
         databaseReference = FirebaseDatabase.getInstance().getReference("users").child(id);
         ValueEventListener postListener = new ValueEventListener() {
             @Override

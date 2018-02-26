@@ -2,20 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:background="@color/black">
 
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:srcCompat="@drawable/user" />
-    </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -66,6 +56,56 @@
         android:id="@+id/recycler_view_profile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/iron"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.33">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/user" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.33">
+
+            <ImageView
+                android:id="@+id/searchImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/searchicon" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0.33">
+
+            <ImageView
+                android:id="@+id/requestsImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/swap" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
